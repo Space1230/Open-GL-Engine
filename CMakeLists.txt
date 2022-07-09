@@ -9,6 +9,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/glew/include)
 add_library(glew STATIC ${CMAKE_CURRENT_SOURCE_DIR}/glew/src/glew.c)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE Debug)
 
 add_subdirectory(${CMAKE_SOURCE_DIR}/glfw)
 
