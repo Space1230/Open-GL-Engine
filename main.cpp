@@ -28,8 +28,10 @@
  * Fragment Shader
  *
  * Uniforms set per draw
+ * basically variables that can hook into shader code
  */
 
+#define ASSERT(x) if (!(x)) __builtin_trap();
 #define GLCall(x) GlClearError();\
     x;\
     if (!GlLogCall(#x, __FILE__, __LINE__)) __builtin_trap(); // __builtin_trap = compiler intrisic
@@ -52,7 +54,11 @@ static bool GlLogCall(const char* function, const char* file, int line)
 {
     while (GLenum error = glGetError())
     {
+        if (error > 1279 && error < 1286)
         std::cout << "[OpenGL Error] {" << GlGetError(error) << "}: " << function
+                  << " " << file << ":" << line << std::endl;
+        else
+        std::cout << "[OpenGL Error] {" << "0x" << std::hex << error << "}: " << function
                   << " " << file << ":" << line << std::endl;
         return false;
     }
@@ -155,6 +161,8 @@ int main(void)
     /* Make the window's context current */
     glfwMakeContextCurrent(window);
 
+    glfwSwapInterval(1);
+
     /* Enable GLEW */
     if(glewInit() != GLEW_OK)
         std::runtime_error("glew failed");
@@ -192,14 +200,31 @@ int main(void)
     unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
     GLCall(glUseProgram(shader));
 
+    GLCall(int location = glGetUniformLocation(shader, "u_Color"));
+    ASSERT(location != -1);
+    GLCall(glUniform4f(location, 0.8f, 0.3f, 0.8f, 1.0f));
+
+    float r = 0.0f;
+    float b = 0.0f;
+    float inc = 0.05f;
     /* Loop until the user closes the window */
     while (!glfwWindowShouldClose(window))
     {
         /* Render here */
         GLCall(glClear(GL_COLOR_BUFFER_BIT));
 
+
+        GLCall(glUniform4f(location, r, b, 0.8f, 1.0f));
         /* Vertex Buffer Draw Call */
         GLCall(glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, nullptr));
+
+        if (r > 1.0f)
+            inc = -0.05f;
+        else if (r < 0.0f)
+            inc = 0.05f;
+
+        r+=inc;
+        b+=inc;
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
