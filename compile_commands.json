@@ -1,8 +1,23 @@
 [
 {
   "directory": "/home/andys/Developement/OpenGl-Engine/build",
-  "command": "/usr/bin/c++  -I/home/andys/Developement/OpenGl-Engine/glew/include -I/home/andys/Developement/OpenGl-Engine/glfw/include -g -o CMakeFiles/engine.dir/main.cpp.o -c /home/andys/Developement/OpenGl-Engine/main.cpp",
+  "command": "/usr/bin/c++  -I/home/andys/Developement/OpenGl-Engine/glew/include -I/home/andys/Developement/OpenGl-Engine/include -I/home/andys/Developement/OpenGl-Engine/glfw/include -g -o CMakeFiles/engine.dir/main.cpp.o -c /home/andys/Developement/OpenGl-Engine/main.cpp",
   "file": "/home/andys/Developement/OpenGl-Engine/main.cpp"
+},
+{
+  "directory": "/home/andys/Developement/OpenGl-Engine/build",
+  "command": "/usr/bin/c++  -I/home/andys/Developement/OpenGl-Engine/glew/include -I/home/andys/Developement/OpenGl-Engine/include -I/home/andys/Developement/OpenGl-Engine/glfw/include -g -o CMakeFiles/engine.dir/src/IndexBuffer.cpp.o -c /home/andys/Developement/OpenGl-Engine/src/IndexBuffer.cpp",
+  "file": "/home/andys/Developement/OpenGl-Engine/src/IndexBuffer.cpp"
+},
+{
+  "directory": "/home/andys/Developement/OpenGl-Engine/build",
+  "command": "/usr/bin/c++  -I/home/andys/Developement/OpenGl-Engine/glew/include -I/home/andys/Developement/OpenGl-Engine/include -I/home/andys/Developement/OpenGl-Engine/glfw/include -g -o CMakeFiles/engine.dir/src/Render.cpp.o -c /home/andys/Developement/OpenGl-Engine/src/Render.cpp",
+  "file": "/home/andys/Developement/OpenGl-Engine/src/Render.cpp"
+},
+{
+  "directory": "/home/andys/Developement/OpenGl-Engine/build",
+  "command": "/usr/bin/c++  -I/home/andys/Developement/OpenGl-Engine/glew/include -I/home/andys/Developement/OpenGl-Engine/include -I/home/andys/Developement/OpenGl-Engine/glfw/include -g -o CMakeFiles/engine.dir/src/VertexBuffer.cpp.o -c /home/andys/Developement/OpenGl-Engine/src/VertexBuffer.cpp",
+  "file": "/home/andys/Developement/OpenGl-Engine/src/VertexBuffer.cpp"
 },
 {
   "directory": "/home/andys/Developement/OpenGl-Engine/build/glfw/src",
