@@ -169,7 +169,7 @@ int main(void)
     /* Make Index Buffer and fill it */
     IndexBuffer ib(indexData, 6);
 
-    ShaderProjectSource source = ParseShader("/home/andys/Developement/OpenGl-Engine/Basic.shader");
+    ShaderProjectSource source = ParseShader("../Basic.shader");
 
     unsigned int shader = CreateShader(source.VertexSource, source.FragmentSource);
     GLCall(glUseProgram(shader));
