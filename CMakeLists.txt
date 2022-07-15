@@ -21,4 +21,4 @@ add_executable(engine main.cpp ${SRC_FILES})
 target_link_libraries(engine glfw glew ${OPENGL_LIBRARIES})
 
 # includes custom header files
-target_include_directories(engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(engine PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
