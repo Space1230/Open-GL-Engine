@@ -2,3 +2,4 @@
 
 * Just a Generic (Hopefully Awesome) OpenGL Render
 Pure OpenGL using glew and glfw
+In progress
